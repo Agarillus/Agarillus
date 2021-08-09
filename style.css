@@ -1,0 +1,835 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+        'nav'
+        'header'
+        'konten'
+        'map'
+        'footer';
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+nav {
+    grid-area: nav;
+    /* background-color: lightblue; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2em;
+
+}
+
+nav .nav-list {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    list-style-type: none;
+}
+
+nav .nav-list a {
+    color: #175A3B;
+    text-decoration: none;
+}
+
+nav .nav-list a:hover {
+    color: #4CA456;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+    height: 20px;
+    /* background-color: red; */
+
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    right: -5px;
+    top: -3px;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #175A3B;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+
+/* animasi toggle */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked~span:nth-child(2) {
+    transform: rotate(45deg) translate(-1px, -1px);
+
+}
+
+.menu-toggle input:checked~span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked~span:nth-child(3) {
+    transform: scale(0);
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+header {
+    background-image: url(bahan/bg.png);
+    /* background-color: lightpink; */
+    grid-area: header;
+    height: 93vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+header .header-text {
+    position: absolute;
+    color: white;
+    top: 240px;
+    left: 140px;
+}
+
+.header-text:first-child {
+    font-weight: 600;
+    font-size: 2em;
+}
+
+.header-text p:nth-child(2) {
+    font-weight: 700;
+    font-size: 1.65em;
+}
+
+.header-text p:nth-child(3) {
+    font-weight: bold;
+    font-size: 3.05em;
+}
+
+.header-text p:nth-child(4) {
+    font-size: 1.05em;
+}
+
+header .header-button {
+    margin-top: 50px;
+    background-color: white;
+    width: 305px;
+    height: 80px;
+    border-radius: 150px;
+    font-size: .8em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+header .header-button a {
+    text-decoration: none;
+    color: #175A3B;
+}
+
+
+header .header-button:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.konten {
+    /* width: 90%; */
+    height: 3700px;
+    grid-area: konten;
+    text-align: center;
+    margin-top: 244px;
+    display: grid;
+    grid-template-areas:
+        'judul'
+        'intro'
+        'layanan';
+    grid-template-rows: auto 3fr 1fr;
+}
+
+#judul-konten {
+    grid-area: judul;
+    color: #175A3B;
+    font-size: 54px;
+    margin-bottom: 64px;
+    font-weight: bold;
+}
+
+.intro {
+    grid-area: intro;
+    background-color: rgb(41, 41, 41);
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    /* height: 85%; */
+    overflow: hidden;
+    color: white;
+}
+
+
+#items {
+    width: 80%;
+    margin: 192px auto 0 auto;
+    /* background-color: red; */
+    text-align: center;
+}
+
+
+
+#judul-items {
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    margin-bottom: 64px;
+}
+
+
+.item {
+    position: relative;
+    transition: all .2s;
+}
+
+.item a {
+    cursor: unset;
+}
+
+
+.container-item {
+    list-style: none;
+    gap: 120.5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-items: center;
+    margin: 0 auto 0 auto;
+}
+
+
+#judul-item {
+    margin-bottom: 25px;
+}
+
+
+#text-item {
+    color: white;
+    width: 85%;
+    position: absolute;
+    /* margin-top: -35px; */
+    display: block;
+    top: 335px;
+    bottom: 0;
+    left: 25px;
+    color: #175A3B;
+    font-weight: 600;
+    /* margin-top: -55px; */
+}
+
+.container-item .item:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.blocks {
+    display: grid;
+    grid-template-areas:
+        'block1 block3'
+        'block2 block3';
+    grid-template-columns: 2fr 1fr;
+    margin-top: 111px;
+    gap: 12px;
+    height: 500px;
+}
+
+.block1 {
+    grid-area: block1;
+    background-color: #FFD58E;
+}
+
+.block2 {
+    grid-area: block2;
+    background-color: #FFD58E;
+}
+
+.block3 {
+    grid-area: block3;
+    background-color: #175A3B;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.list-produk {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-bottom: 50px;
+    /* gap: 83px; */
+}
+
+.item-produk img {
+    width: 320px;
+    height: 448px;
+}
+
+.list-produk li {
+    list-style-type: none;
+}
+
+.lihat-semua {
+    /* background-color: red; */
+    color: #FFD58E;
+}
+
+
+
+
+
+
+
+
+
+.layanan {
+    border-bottom-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+    grid-area: layanan;
+    background-color: white;
+    box-shadow: 0 20px 19px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+
+
+.container-judul-layanan {
+    position: absolute;
+    width: 822px;
+    height: 99px;
+    background-color: #FFD58E;
+    line-height: 99px;
+    top: -50px;
+    border-radius: 100px;
+    left: 549px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.container-judul-layanan p {
+    font-weight: bold;
+    font-size: 36px;
+    color: #333;
+}
+
+
+
+
+.list-layanan {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: 176px;
+    width: 80%;
+    gap: 93.5px;
+    margin: 169px auto 0 auto;
+    list-style-type: none;
+
+}
+
+.list-layanan .item-layanan {
+    /* position: relative; */
+    display: grid;
+
+}
+
+.list-layanan .item-layanan img {
+    box-shadow: 0 3px 30px rgba(0, 0, 0, 0.2);
+}
+
+.judul-item-layanan {
+    /* position: absolute; */
+    margin-top: -100px;
+    font-size: 2.3em;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+
+
+.map {
+    margin-top: 200px;
+    height: 894px;
+    /* background-color: lightyellow; */
+    grid-area: map;
+    text-align: center;
+}
+
+
+footer {
+    height: 300px;
+    background-color: #FFD58E;
+    grid-area: footer;
+    display: grid;
+    grid-template-areas:
+        'logo-footer contact-us find-us';
+}
+
+.logo-footer {
+    grid-area: logo-footer;
+    /* background-color: tomato; */
+}
+
+.contact {
+    grid-area: contact-us;
+    /* background-color: aqua; */
+}
+
+.find-us {
+    grid-area: find-us;
+    /* background-color: aquamarine; */
+}
+
+.logo-footer {
+    display: flex;
+    margin: auto;
+}
+
+.contact {
+    color: #333;
+    display: grid;
+    place-items: center center;
+    /* margin: auto; */
+}
+
+.contact .judul-contact {
+    margin-bottom: 28px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.contact .list-contact li {
+    display: flex;
+    margin-bottom: 24px;
+    /* background-color: red; */
+    align-items: center;
+}
+
+.contact .list-contact .mail {
+    margin-bottom: 0;
+}
+
+.contact .list-contact img {
+    margin-right: 16px;
+}
+
+.text-contact {
+    font-weight: 500;
+}
+
+
+.find-us {
+    color: #333;
+    display: grid;
+    place-items: center center;
+    /* margin: auto; */
+}
+
+.find-us .judul-find-us {
+    margin-bottom: 28px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.find-us .list-find-us li {
+    display: flex;
+    margin-bottom: 24px;
+    /* background-color: red; */
+    align-items: center;
+}
+
+.find-us .list-find-us .ig {
+    margin-bottom: 0;
+}
+
+.find-us .list-find-us img {
+    margin-right: 16px;
+}
+
+.text-find-us {
+    font-weight: 500;
+    text-decoration: none;
+    color: #333;
+}
+
+.text-find-us:hover {
+    color: #4CA456;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .logo {
+        transform: scale(0.7);
+    }
+
+    nav .nav-list {
+        width: 60%;
+        font-size: 16px;
+    }
+
+    .header {
+        font-size: 0.7em;
+        width: 768px;
+    }
+
+    header .header-text {
+        display: flex;
+        flex-direction: column;
+        place-items: center center;
+        text-align: center;
+        align-content: center;
+        left: 0;
+        right: 0;
+        top: 300px;
+    }
+
+    .konten {
+        height: 3900px;
+        grid-template-rows: auto 3fr .45fr;
+    }
+
+    #judul-konten {
+        font-size: 36px;
+    }
+
+    .container .konten {
+        border-radius: 0px;
+        width: 200px;
+    }
+
+
+    .intro {
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+    }
+
+    .item-produk img {
+        width: 200px;
+        height: 283px;
+    }
+
+    .list-produk {
+        margin: 0 auto 64px auto;
+        width: 450px;
+        gap: 50px;
+        box-sizing: border-box;
+    }
+
+    .item-produk {
+        height: 283px;
+        width: 200px;
+    }
+
+    .container-judul-layanan {
+        width: 500px;
+        height: 60px;
+        top: -30px;
+        border-radius: 100px;
+        left: 134px;
+        line-height: 60px;
+    }
+
+    .layanan {
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+        display: grid;
+    }
+
+    .container-layanan {
+        display: grid;
+    }
+
+    .list-layanan {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        width: 80%;
+        gap: 93.5px;
+        margin: auto;
+        gap: 40px;
+    }
+
+    .item-layanan {
+        font-size: .5em;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item-layanan img {
+        width: 200px;
+        height: 251px;
+    }
+
+    .judul-item-layanan {
+        margin-top: -50px;
+    }
+
+    .list-layanan .item-layanan img {
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .item-footer {
+        transform: scale(.7);
+    }
+}
+
+
+
+@media screen and (max-width: 576px) {
+
+    .konten {
+        height: 6400px;
+    }
+
+    .header {
+        font-size: .66em;
+        width: auto;
+    }
+
+    header .header-text {
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        text-align: center;
+        align-content: center;
+        left: 0px;
+        right: 0;
+        top: 300px;
+        word-spacing: 0px;
+    }
+
+    header .header-button {
+        font-size: 1.2em;
+    }
+
+    .container-item {
+        gap: 100px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .intro {
+        border-top-left-radius: 90px;
+        border-top-right-radius: 90px;
+    }
+
+    .blocks {
+        display: grid;
+        grid-template-areas:
+            'block1'
+            'block2'
+            'block3';
+        grid-template-columns: 1fr;
+        margin-top: 111px;
+        gap: 12px;
+        height: 500px;
+    }
+
+    .list-produk {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        place-items: center;
+        place-content: center;
+    }
+
+    .item-produk {
+        height: 354px;
+        width: 250px;
+    }
+
+    .item-produk img {
+        height: 354px;
+        width: 250px;
+    }
+
+    .container-judul-layanan {
+        width: 400px;
+        height: 60px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+
+    .container-judul-layanan p {
+        font-size: 24px;
+    }
+
+    .layanan {
+        border-bottom-left-radius: 90px;
+        border-bottom-right-radius: 90px;
+    }
+
+    .container-layanan {
+        display: grid;
+    }
+
+    .list-layanan {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        width: 80%;
+        gap: 93.5px;
+        margin: 94px auto 64px auto;
+        gap: 40px;
+    }
+
+    .item-layanan {
+        font-size: .5em;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item-layanan img {
+        width: 200px;
+        height: 251px;
+    }
+
+    .judul-item-layanan {
+        margin-top: -50px;
+    }
+
+    .list-layanan .item-layanan img {
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+        height: 660px;
+        background-color: #FFD58E;
+        grid-area: footer;
+        display: grid;
+        grid-template-areas:
+            'logo-footer'
+            'contact-us'
+            'find-us';
+        grid-template-rows: 1fr 1fr 1fr;
+        text-align: center;
+    }
+
+    nav ul li a {
+        color: white;
+    }
+
+    .nav ul li {
+        width: 100%;
+    }
+
+    .nav ul li a {
+        width: 100%;
+        height: 150px;
+        display: grid;
+        place-items: center;
+    }
+
+    .nav ul {
+        position: absolute;
+        flex-direction: column;
+        right: 0;
+        top: 0;
+        height: 101.9vh;
+        justify-content: space-evenly;
+        background-color: #FFD58E;
+        z-index: 5;
+        align-items: center;
+        width: 80%;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+        text-align: center;
+        align-content: center;
+        overflow-x: hidden;
+    }
+
+    .nav ul li:hover {
+        background-color: white;
+        cursor: pointer;
+
+    }
+
+    .nav ul li a {
+        width: 100%;
+        height: 150px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        overflow: hidden;
+    }
+
+    nav ul.slide {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+
+    .menu-toggle input:checked~span {
+        background-color: #175A3B;
+        z-index: 100;
+    }
+}
